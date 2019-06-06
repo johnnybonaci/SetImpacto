@@ -1,42 +1,37 @@
-<definitions xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soaptest.local/soap/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://soaptest.local/soap/">
-	<types>
-		<xsd:schema targetNamespace="http://soaptest.local/soap/">
-			<xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
-			<xsd:import namespace="http://schemas.xmlsoap.org/wsdl/"/>
-		</xsd:schema>
-	</types>
-	<message name="Service.act_maestro_serviciosRequest">
-		<part name="mdn" type="xsd:string"/>
-		<part name="accion" type="xsd:string"/>
-		<part name="fecha_generacion" type="xsd:string"/>
-		<part name="sistema" type="xsd:string"/>
-		<part name="ufmi" type="xsd:string"/>
-	</message>
-	<message name="Service.act_maestro_serviciosResponse">
-		<part name="msg" type="xsd:string"/>
-		<part name="code" type="xsd:int"/>
-	</message>
-	<portType name="PortType">
-		<operation name="Service.act_maestro_servicios">
-			<input message="tns:Service.act_maestro_serviciosRequest"/>
-			<output message="tns:Service.act_maestro_serviciosResponse"/>
-		</operation>
-	</portType>
-	<binding name="Binding" type="tns:PortType">
-	<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
-		<operation name="Service.act_maestro_servicios">
-			<soap:operation soapAction="http://soaptest.local/index.php/Service.act_maestro_servicios" style="rpc"/>
-			<input>
-				<soap:body use="encoded" namespace="" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
-			</input>
-			<output>
-				<soap:body use="encoded" namespace="" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
-			</output>
-		</operation>
-	</binding>
-	<service name="">
-		<port name="Port" binding="tns:Binding">
-			<soap:address location="http://soaptest.local/index.php"/>
-		</port>
-	</service>
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<definitions xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://dlnx0057/soap/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://dlnx0057/soap/">
+<types>
+<xsd:schema targetNamespace="http://dlnx0057/soap/"
+>
+ <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+ <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+</xsd:schema>
+</types>
+<message name="Service.act_maestro_serviciosRequest">
+  <part name="SolicitudImpactada" type="xsd:string" />
+  <part name="ObjetoImpactado" type="xsd:string" />
+  <part name="DerivacionImpactada" type="xsd:string" />
+  <part name="FechaImpacto" type="xsd:string" /></message>
+<message name="Service.act_maestro_serviciosResponse">
+  <part name="msg" type="xsd:string" />
+  <part name="code" type="xsd:int" /></message>
+<portType name="PortType">
+  <operation name="Service.act_maestro_servicios">
+    <input message="tns:Service.act_maestro_serviciosRequest"/>
+    <output message="tns:Service.act_maestro_serviciosResponse"/>
+  </operation>
+</portType>
+<binding name="Binding" type="tns:PortType">
+  <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+  <operation name="Service.act_maestro_servicios">
+    <soap:operation soapAction="http://dlnx0057/SetImpactoKodiak/index.php/Service.act_maestro_servicios" style="rpc"/>
+    <input><soap:body use="encoded" namespace="" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+</binding>
+<service name="">
+  <port name="Port" binding="tns:Binding">
+    <soap:address location="http://dlnx0057/SetImpactoKodiak/index.php"/>
+  </port>
+</service>
 </definitions>
