@@ -9,15 +9,15 @@ class Service {
 		}
  	
 
-    	if(!preg_match('/^[a-z]+$/i', $SolicitudImpactada)){
+    	if(!preg_match('/^[a-zA-Z0-9]+$/i', $SolicitudImpactada)){
     		return array('400', 'Bad Request - Solicitud Impactada invalida');	
     	} 
 
-    	if(!preg_match('/^[a-z]+$/i', $ObjetoImpactado)){
+    	if(!preg_match('/^[a-zA-Z0-9]+$/i', $ObjetoImpactado)){
     		return array('400', 'Bad Request - Objeto Impactado invalido.');	
     	} 
 
-    	if(!preg_match('/^[a-z]+$/i', $DerivacionImpactada)){
+    	if(!preg_match('/^[a-zA-Z0-9]+$/i', $DerivacionImpactada)){
     		return array('400', 'Bad Request - Derivacion Impactada invalida.');	
 		} 
     	if(!preg_match('/^[0-9]{14}$/', $FechaImpacto)){
